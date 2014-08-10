@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/vendor.css"/>
+<link rel="stylesheet" href="styles/main.css"/>
+</head>
+
+<!-- 
+	This attribute ( ng-app="enqApp" ) initializes the form functionality (using angularjs).
+	It *must* be placed on an element that is a parent to both the 'enq-form-section' tags and the 'enq-form-link' tag.
+	The 'body' tag is recommended.
+-->
+<body ng-app="enqApp">
+
+
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+					<a class="navbar-brand" href="#">Brand</a> </div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"> <a href="#">Link</a> </li>
+						<li> <a href="#">Link</a> </li>
+						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li> <a href="#">Action</a> </li>
+								<li> <a href="#">Another action</a> </li>
+								<li> <a href="#">Something else here</a> </li>
+								<li class="divider"> </li>
+								<li> <a href="#">Separated link</a> </li>
+								<li class="divider"> </li>
+								<li> <a href="#">One more separated link</a> </li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" />
+						</div>
+						<button type="submit" class="btn btn-default">Submit</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li> <a href="#">Link</a> </li>
+						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li> <a href="#">Action</a> </li>
+								<li> <a href="#">Another action</a> </li>
+								<li> <a href="#">Something else here</a> </li>
+								<li class="divider"> </li>
+								<li> <a href="#">Separated link</a> </li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<ul class="breadcrumb">
+				<li> <a href="#">Home</a> <span class="divider">/</span> </li>
+				<li> <a href="#">Library</a> <span class="divider">/</span> </li>
+				<li class="active"> Data </li>
+			</ul>
+			<div class="page-header">
+				<h1> Example page header <small>Subtext for header</small> </h1>
+			</div>
+			<!-- 
+					This tag ( enq-form-link ) provides the functionality to show and hide the form. 
+					It is styling neutral so any desired classes or styling can be applied.
+					It resolves to an anchor tag (<a href="">Your text</a>) so any inline content can be placed inside.
+					It can be placed anywhere in the document.
+				-->
+			<enq-form-link class="btn btn-primary">Open Enquiry Form</enq-form-link>
+			
+			<br>
+			<br>
+		</div>
+	</div>
+</div>
+
+<!-- 
+	This ( <enq-form-section> ) is the form section tag, which creates a modal wrapper for the form to appear in.
+	The 'enq-form-section' tag should be placed as a direct child of the body tag to ensure proper css styling of the background overlay.
+	Uses Bootstrap css for default styling and custom css for animation and additional styles.
+  -->
+<enq-form-section></enq-form-section>
+
+
+
+<script src="scripts/jquery-1.11.1.min.js"></script>
+<script src="scripts/vendor.js"></script>
+<script src="scripts/scripts.js"></script>
+<!-- Should not be necessary to modify this file, but in the event of geopolitical upheaval... --> 
+<script src="config/countriesdata.js"></script> 
+
+<!-- 
+	Contains settings like the app id, titles, labels, error messages, etc. 
+	App id should be a unique identifier.
+	Form input attributes are set here (visible, required, etc)
+--> 
+<script src="config/formsettings.js"></script> 
+
+<!-- Modify this file to add course data --> 
+<script src="config/coursedata.js"></script> 
+
+<!-- Contains any datalists and select data. The contents of each list can be modified. --> 
+<script src="config/formdata.js"></script>
+<script type="text/javascript">
+	$( document ).ready(function() {
+  		$('.btn-primary').click();
+	});
+	
+</script>
+</body>
+</html>

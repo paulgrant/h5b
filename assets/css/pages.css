@@ -1,0 +1,866 @@
+/* 	Begin Modified Meyer Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body { line-height: 1; }
+table { border-collapse: collapse; border-spacing: 0; }
+ul { list-style-type:disc; }
+/*General styles*/
+
+html, body, #container { height: 100%; }
+button { border:none;}
+#container { height: 100%; min-height: 100%;}
+a { color:inherit; text-decoration:inherit; }
+*{ animation-fill-mode:both !important; -webkit-animation-fill-mode:both !important; }
+[onclick], [onrollover], button { cursor:pointer; }
+
+#in5footer,#demoNote,#loadIndicator{
+	min-width:100%;
+	color:#fff;
+	background:#666;
+	font-family:"Trebuchet MS", "Lucida Grande", Helvetica, sans-serif;
+	text-align:center;
+	font-size:15px;
+	box-sizing:border-box; 
+	-moz-box-sizing:border-box;
+}
+
+#loadIndicator{
+	top:0; left:0; margin:auto;
+	padding: 6px;
+    position: fixed;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition:all 1s ease-in .5s;
+    opacity:1;
+    z-index:99;
+}
+
+body.loaded #loadIndicator {
+	opacity:0;
+	transform:translateY(-36px);
+	-webkit-transform:translateY(-36px);
+}
+
+#loadIndicator img {
+	vertical-align:text-bottom;
+    width:18px;
+}
+
+#loadIndicator span:after {
+	content:' Loading Content...';
+}
+
+#in5footer{
+	height:26px;
+	line-height:26px;
+	clear:both;
+	position: relative;
+	margin-top: -26px;
+}
+
+#demoNote {
+    right: 0; bottom: 0; margin: auto;
+    height: 96px !important;
+    padding: 36px 10px;
+}
+
+#in5footer a, #demoNote a {
+	text-decoration:none;
+	color:#99ccff;
+}
+
+.pageItem, .pageItemIFrame {
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:auto !important;
+	height:auto !important;
+	box-sizing:border-box; 
+	-moz-box-sizing:border-box;
+	-webkit-tap-highlight-color:transparent;
+}
+
+.page {
+	position:relative;
+	float: left;
+	height: 100%;
+	width: 100%;
+	overflow:hidden;
+}
+
+.pages {
+	list-style: none outside none;
+	padding: 0;
+	margin: 0 auto ;
+}	
+
+#container > .page { /*center single page baker*/
+    position:absolute;
+    bottom:0;
+    left:0; 
+    right:0;
+    top:0;
+    margin:auto;
+}
+
+.textColumn {
+	float:left;
+}
+
+.scroll {
+	overflow:auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.scroll-vert {
+	overflow-y:auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+@media only screen and (max-device-width : 1024px) {
+	.anythingSlider {padding:0;}
+}
+
+object, embed, img, a { 
+  outline: 0;
+}
+
+.liquid svg {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.noPlugin {
+	width:100%;
+	height:100%;
+	background:#ccc;
+	border:1px solid #666;
+	padding:6px;
+}
+
+.paper-vertical, .paper-horizontal {
+	padding: 0 8px;
+}
+
+.paper-horizontal {
+	position:absolute;
+	top:50%;
+	overflow:visible;
+}
+
+.paper-vertical .page, .paper-horizontal .page {
+	border: 1px solid #bbb;	
+	margin: 4px 4px 4px 0;
+	-moz-box-shadow: 0px 0px 0px #999;
+	-webkit-box-shadow: 0px 0px 5px #999;
+	box-shadow: 0px 0px 5px #999;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');
+}
+
+.liquid .page, .page.liquid {
+	position: absolute;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	display:none;
+}
+
+.page.liquid { /*for multi-file*/
+    display:block;
+}
+
+.liquid .page.activePage {
+	display:block;
+}
+
+.page.ls { bottom:auto !important; }
+
+#container > nav { display:none; }
+#container > nav > button {
+	display: block;
+	position:absolute;
+	top:50%;
+	width: 68px;
+	height: 68px;
+	margin: -34px 0 0 0; /* half height of image */
+	text-align: center;
+	outline: 0;
+	background: url(../images/arrows-slider.png) no-repeat;
+}	
+
+#container > nav > button:hover { opacity:.7; }
+
+#container > nav > #backBtn { 
+	left: 0; 
+	background-position: left bottom;
+}
+#container > nav > #nextBtn { 
+	right: 0; 
+	background-position: right bottom; 
+}
+
+
+/* ColorBox Core Style: The following CSS is consistent between example themes and should not be altered. */
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box;}
+
+/* 	User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background:#fff;}
+#colorbox{
+	border-radius: 12px;
+    box-shadow: 0 0 10px 10px #CCCCCC;
+}
+    #cboxContent{background:#fff; overflow:hidden;}
+    #cboxMiddleLeft, #cboxMiddleRight { width:8px; }
+    #cboxTopCenter{ height:24px; } 
+    #cboxBottomCenter { height:8px; }
+	.cboxIframe{background:#fff;}
+	#cboxError{padding:50px;}
+	#cboxLoadedContent{background:#fff; margin-top:28px;}
+	#cboxTitle{position:absolute; top:4px; left:0; text-align:center; width:100%; color:#949494;}
+	#cboxCurrent{position:absolute; top:4px; left:0px; color:#949494;}
+	#cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+	#cboxPrevious{position:absolute; top:50%; left:0px; margin-top:-32px; background:url(../images/lb_controls.png) no-repeat top left; width:33px; height:65px; text-indent:-9999px;}
+	#cboxNext{position:absolute; top:50%; right:0px; margin-top:-32px; background:url(../images/lb_controls.png) no-repeat top right; width:33px; height:65px; text-indent:-9999px;}
+	#cboxLoadingOverlay{background:#fff;}
+	#cboxLoadingGraphic{background:url(../images/loading.gif) no-repeat center center;}
+	#cboxClose{position:absolute; top:2px; right:0px; display:block; background:url(../images/lb_controls.png) no-repeat top center; width:26px; height:24px; text-indent:-9999px;}
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE #cboxTopLeft, .cboxIE #cboxTopCenter, .cboxIE #cboxTopRight, .cboxIE #cboxBottomLeft, .cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight, .cboxIE #cboxMiddleLeft, .cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+.hidden { display:none; }
+.mso { pointer-events:none; }
+[data-useswipe="1"] { pointer-events:auto; }
+.mso > .state { display:none; width:100%; height:inherit; position:absolute; z-index:-1; pointer-events:auto; }
+.mso > .state.active { display:block; z-index:0; }
+.mso.slideshow.seq, .panzoom { overflow: hidden; }
+.panzoom { cursor:move; cursor:-moz-grab; cursor:-webkit-grab; }
+
+.align-vert { display:table; }
+[class^="valign"] {
+	position:relative;
+	display:table-cell;
+	vertical-align:middle;
+}
+.valign-bottom { vertical-align:bottom; }
+
+.flex-image {
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.fill-image {
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+/*anchor object styles*/
+img.noTextWrap {
+	position:absolute;
+}
+
+img.alignLeft { float:left; }
+img.alignRight { float:right; }
+img.alignCenter {display:block; margin-left:auto; margin-right:auto;}
+
+img.leftFullWidth {
+	float:left;
+	padding-right:100%;
+}
+
+img.rightFullWidth {
+	float:right;
+	padding-left:100%;
+}
+
+ul.thumbs {
+	padding:20px;
+	white-space: nowrap;
+    width: 1px;
+}
+
+ul.thumbs li { /*Baker index thumbnails*/
+    display:inline;
+    list-style-type:none;
+    margin: 0 4px;
+    outline: none;
+    vertical-align:top;
+}
+ul.thumbs > li img { box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); }
+
+/*CSS Generated from InDesign Styles*/
+body { background:#ededed; }
+.page { width:480.00px; height:648.00px; background: #fff !important; }
+.paper-vertical { width:480.00px; height:100%; }
+.paper-horizontal { width:19264.00px; height:648.00px; margin-top:-324.00px; }
+@media all and (max-height:648.00px) {
+	.paper-horizontal { margin:0;top:0;}
+	#container > .page { margin:0 auto;}/*pos top for webkit+baker*/
+}
+@media all and (max-width:480.00px) {
+	.paper-vertical .page, .paper-horizontal .page, .anythingSlider-in5 { padding:0;margin:0;top:0;border:0; }
+	.paper-vertical, .paper-horizontal { padding:0; }
+}
+
+#item19840 {
+	width:380px !important;
+	height:110px !important;
+	left:12px !important;
+	top:14px !important;
+}
+
+#item19972 {
+	width:251px !important;
+	height:38px !important;
+	top:443px !important;
+}
+
+#item19973 {
+	width:251px !important;
+	height:38px !important;
+	top:488px !important;
+}
+
+#item19974 {
+	width:251px !important;
+	height:38px !important;
+	top:535px !important;
+}
+
+#item19975 {
+	width:251px !important;
+	height:38px !important;
+	top:582px !important;
+}
+
+#item19922 {
+	width:116px !important;
+	height:65px !important;
+	left:194px !important;
+	top:30px !important;
+}
+
+#item19926 {
+	width:30px !important;
+	height:29px !important;
+	left:324px !important;
+	top:35px !important;
+}
+
+#item19927 {
+	width:30px !important;
+	height:29px !important;
+	left:357px !important;
+	top:35px !important;
+}
+
+#item19929 {
+	width:30px !important;
+	height:29px !important;
+	left:389px !important;
+	top:35px !important;
+}
+
+#item22405 {
+	width:30px !important;
+	height:29px !important;
+	left:421px !important;
+	top:35px !important;
+}
+
+#item20061 {
+	width:325px !important;
+	height:38px !important;
+	top:447px !important;
+}
+
+#item20062 {
+	width:325px !important;
+	height:38px !important;
+	top:494px !important;
+}
+
+#item20063 {
+	width:325px !important;
+	height:38px !important;
+	top:540px !important;
+}
+
+#item20064 {
+	width:325px !important;
+	height:38px !important;
+	top:588px !important;
+}
+
+#item20042 {
+	width:30px !important;
+	height:29px !important;
+	left:385px !important;
+	top:35px !important;
+}
+
+#item22415 {
+	width:30px !important;
+	height:29px !important;
+	left:417px !important;
+	top:35px !important;
+}
+
+#item20046 {
+	width:207px !important;
+	height:146px !important;
+	left:247px !important;
+	top:477px !important;
+}
+
+#item20284 {
+	width:30px !important;
+	height:29px !important;
+	left:320px !important;
+	top:35px !important;
+}
+
+#item20288 {
+	width:30px !important;
+	height:29px !important;
+	left:353px !important;
+	top:35px !important;
+}
+
+#item20137 {
+	width:252px !important;
+	height:38px !important;
+	top:448px !important;
+}
+
+#item20138 {
+	width:252px !important;
+	height:38px !important;
+	top:495px !important;
+}
+
+#item20139 {
+	width:252px !important;
+	height:38px !important;
+	top:542px !important;
+}
+
+#item20140 {
+	width:252px !important;
+	height:38px !important;
+	top:590px !important;
+}
+
+#item20121 {
+	width:216px !important;
+	height:140px !important;
+	left:244px !important;
+	top:22px !important;
+}
+
+#item20141 {
+	width:236px !important;
+	height:41px !important;
+	left:244px !important;
+	top:492px !important;
+}
+
+#item20142 {
+	width:236px !important;
+	height:41px !important;
+	left:244px !important;
+	top:540px !important;
+}
+
+#item20143 {
+	width:236px !important;
+	height:38px !important;
+	left:244px !important;
+	top:590px !important;
+}
+
+#item20243 {
+	width:209px !important;
+	height:37px !important;
+	top:587px !important;
+}
+
+#item20258 {
+	width:275px !important;
+	height:72px !important;
+	left:20px !important;
+	top:7px !important;
+}
+
+#item20276 {
+	width:122px !important;
+	height:15px !important;
+	left:20px !important;
+	top:530px !important;
+}
+
+#item20262 {
+	width:134px !important;
+	height:29px !important;
+	left:338px !important;
+	top:15px !important;
+}
+
+#item20271 {
+	width:265px !important;
+	height:15px !important;
+	left:20px !important;
+	top:547px !important;
+}
+
+#item20266 {
+	width:105px !important;
+	height:29px !important;
+	left:339px !important;
+	top:48px !important;
+}
+
+#item22423 {
+	width:105px !important;
+	height:29px !important;
+	left:339px !important;
+	top:83px !important;
+}
+
+#item20292 {
+	width:178px !important;
+	height:19px !important;
+	left:20px !important;
+	top:511px !important;
+}
+
+#item20314 {
+	width:145px !important;
+	height:16px !important;
+	left:41px !important;
+	top:490px !important;
+}
+
+#item20331 {
+	width:21px !important;
+	height:24px !important;
+	left:545px !important;
+	top:104px !important;
+}
+
+#item20332 {
+	width:21px !important;
+	height:24px !important;
+	left:605px !important;
+	top:205px !important;
+}
+
+#item20333 {
+	width:21px !important;
+	height:24px !important;
+	left:685px !important;
+	top:121px !important;
+}
+
+#item20334 {
+	width:21px !important;
+	height:24px !important;
+	left:700px !important;
+	top:174px !important;
+}
+
+#item20335 {
+	width:21px !important;
+	height:24px !important;
+	left:832px !important;
+	top:97px !important;
+}
+
+#item20336 {
+	width:21px !important;
+	height:24px !important;
+	left:865px !important;
+	top:236px !important;
+}
+
+#item20490 {
+	width:109px !important;
+	height:50px !important;
+	left:39px !important;
+	top:92px !important;
+}
+
+#item20491 {
+	width:109px !important;
+	height:50px !important;
+	left:345px !important;
+	top:125px !important;
+}
+
+#item20492 {
+	width:109px !important;
+	height:50px !important;
+	left:191px !important;
+	top:170px !important;
+}
+
+#item20493 {
+	width:109px !important;
+	height:50px !important;
+	left:17px !important;
+	top:210px !important;
+}
+
+#item20494 {
+	width:109px !important;
+	height:50px !important;
+	left:327px !important;
+	top:253px !important;
+}
+
+#item20775 {
+	width:187px !important;
+	height:13px !important;
+	left:57px !important;
+	top:143px !important;
+}
+
+#item20790 {
+	width:92px !important;
+	height:13px !important;
+	left:191px !important;
+	top:208px !important;
+}
+
+#item20791 {
+	width:163px !important;
+	height:13px !important;
+	left:40px !important;
+	top:287px !important;
+}
+
+#item20793 {
+	width:127px !important;
+	height:13px !important;
+	left:110px !important;
+	top:432px !important;
+}
+
+#item20841 {
+	width:165px !important;
+	height:17px !important;
+	left:135px !important;
+	top:174px !important;
+}
+
+#item20860 {
+	width:117px !important;
+	height:17px !important;
+	left:40px !important;
+	top:480px !important;
+}
+
+#item20879 {
+	width:266px !important;
+	height:23px !important;
+	left:37px !important;
+	top:584px !important;
+}
+
+#item20894 {
+	width:217px !important;
+	height:13px !important;
+	left:206px !important;
+	top:543px !important;
+}
+
+#item20912 {
+	width:108px !important;
+	height:13px !important;
+	left:97px !important;
+	top:87px !important;
+}
+
+#item20939 {
+	width:119px !important;
+	height:13px !important;
+	left:32px !important;
+	top:183px !important;
+}
+
+#item20928 {
+	width:114px !important;
+	height:13px !important;
+	left:91px !important;
+	top:104px !important;
+}
+
+#item20913 {
+	width:108px !important;
+	height:13px !important;
+	left:91px !important;
+	top:104px !important;
+}
+
+#item20936 {
+	width:108px !important;
+	height:13px !important;
+	left:16px !important;
+	top:121px !important;
+}
+
+#item20944 {
+	width:61px !important;
+	height:14px !important;
+	left:284px !important;
+	top:143px !important;
+}
+
+#item20959 {
+	width:380px !important;
+	height:29px !important;
+	left:45px !important;
+	top:206px !important;
+}
+
+#item20977 {
+	width:300px !important;
+	height:15px !important;
+	left:45px !important;
+	top:399px !important;
+}
+
+#item20992 {
+	width:126px !important;
+	height:17px !important;
+	left:106px !important;
+	top:77px !important;
+}
+
+#item21008 {
+	width:134px !important;
+	height:17px !important;
+	left:126px !important;
+	top:188px !important;
+}
+
+#item21023 {
+	width:134px !important;
+	height:17px !important;
+	left:126px !important;
+	top:317px !important;
+}
+
+#item21030 {
+	width:105px !important;
+	height:13px !important;
+	left:187px !important;
+	top:416px !important;
+}
+
+#item21045 {
+	width:141px !important;
+	height:17px !important;
+	left:172px !important;
+	top:508px !important;
+}
+
+#item21060 {
+	width:170px !important;
+	height:17px !important;
+	left:684px !important;
+	top:77px !important;
+}
+
+#item21076 {
+	width:113px !important;
+	height:17px !important;
+	left:621px !important;
+	top:171px !important;
+}
+
+#item21091 {
+	width:121px !important;
+	height:13px !important;
+	left:726px !important;
+	top:239px !important;
+}
+
+#item21107 {
+	width:99px !important;
+	height:16px !important;
+	left:564px !important;
+	top:334px !important;
+}
+
+#item21122 {
+	width:88px !important;
+	height:17px !important;
+	left:659px !important;
+	top:396px !important;
+}
+
+#item21140 {
+	width:121px !important;
+	height:20px !important;
+	left:196px !important;
+	top:154px !important;
+}
+
+#item21155 {
+	width:110px !important;
+	height:13px !important;
+	left:66px !important;
+	top:239px !important;
+}
+
+#item21171 {
+	width:190px !important;
+	height:18px !important;
+	left:42px !important;
+	top:414px !important;
+}
+#in5footer {display:none;}
+
+
+
+/*fixes*/
+
+img.pageItem.snap {
+	cursor: pointer;
+}

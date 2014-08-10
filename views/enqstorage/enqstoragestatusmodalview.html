@@ -1,0 +1,36 @@
+<script type="text/ng-template" id="tmpl_dops.html"><h1>Status</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="text-info bg-info">No information has been submitted.</p>
+        </div>
+    </div></script><script type="text/ng-template" id="tmpl_dOps.html"><h1>Status</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="text-info bg-info">No information has been submitted.</p>
+        </div>
+    </div></script><script type="text/ng-template" id="tmpl_DOps.html"><h1>Error</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="text-danger bg-danger">Local data was found but there was an error sending it. Please try again soon.</p>
+        </div>
+    </div></script><script type="text/ng-template" id="tmpl_DOPs.html"><h1>Success</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="text-success bg-success">Previously stored data has been successfully sent.</p>
+        </div>
+    </div></script><script type="text/ng-template" id="tmpl_dopS.html"><h1>Status</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="text-warning bg-warning">Thank you. You&rsquo;re not online so your data has been saved locally and will be sent when your connection resumes.</p>
+        </div>
+    </div></script><script type="text/ng-template" id="tmpl_DOPS.html"><h1>Success</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="text-success bg-success">Thank you. Your data was sent successfully.</p>
+        </div>
+    </div></script><script type="text/ng-template" id="tmpl_DOpS.html"><h1>Error</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="text-danger bg-danger">Sorry, there was an error sending your data. Please try again soon.</p>
+        </div>
+    </div></script><div class="enq-panel enq-status" id="enqstatus" ng-controller="EnqStorageStatusCtrl"><a href="#anchor"></a> <!--{{ statusmask }}--> <a role="button" class="close enq-btn-close-top pull-right" href="/#/enquiryForm"><span aria-hidden="true">&times;</span> <span class="sr-only">Close</span></a><div id="tmpl-content" ng-include="" src="'tmpl_' + statusmask + '.html'"></div><div class="row"><div class="col-sm-12"><p class="pull-right"><a href="#/enquiryForm" role="button" class="btn btn-primary">Return to form</a> <a href="#/" role="button" class="btn btn-default">Close form</a></p></div></div></div>
